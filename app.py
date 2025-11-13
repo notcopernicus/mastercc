@@ -72,7 +72,7 @@ selected_category = st.sidebar.selectbox("Metric Category", categories)
 filtered = data[(data["County"] == selected_county) & (data["Metric_Category"] == selected_category)]
 
 # Dashboard visuals
-st.title("Inclusive Growth Score Dashboard")
+st.title("Dashboard")
 
 # Handle potential empty data after filtering
 if filtered.empty:
@@ -161,7 +161,7 @@ else:
 
     # Let's check for 2025 data.
     if 2025 not in housing_data['Year'].unique():
-        st.sidebar.info("2025 data not found. Forecasting using Linear Regression.")
+        st.sidebar.info("Forecasting using Linear Regression.")
         
         forecasted_rows = []
         for county in housing_data['County'].unique():
